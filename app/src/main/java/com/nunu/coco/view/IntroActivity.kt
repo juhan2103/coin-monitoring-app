@@ -1,8 +1,9 @@
-package com.nunu.coco
+package com.nunu.coco.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.nunu.coco.R
 import timber.log.Timber
 
 class IntroActivity : AppCompatActivity() {
