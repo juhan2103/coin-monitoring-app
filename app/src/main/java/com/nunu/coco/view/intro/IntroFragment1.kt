@@ -1,4 +1,4 @@
-package com.nunu.coco.view
+package com.nunu.coco.view.intro
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

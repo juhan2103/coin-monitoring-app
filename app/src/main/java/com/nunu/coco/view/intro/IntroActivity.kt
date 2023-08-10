@@ -1,4 +1,4 @@
-package com.nunu.coco.view
+package com.nunu.coco.view.intro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
