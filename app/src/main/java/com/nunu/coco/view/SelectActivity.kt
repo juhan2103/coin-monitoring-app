@@ -1,10 +1,12 @@
 package com.nunu.coco.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nunu.coco.MainActivity
 import com.nunu.coco.R
 import com.nunu.coco.databinding.ActivitySelectBinding
 import com.nunu.coco.view.adapter.SelectRvAdapter
@@ -35,6 +37,13 @@ class SelectActivity : AppCompatActivity() {
 
             Timber.d(it.toString())
         })
+
+        viewModel.setUpFirstFlag()
+
+        binding.laterTextArea.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

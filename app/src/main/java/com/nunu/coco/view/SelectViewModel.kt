@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.nunu.coco.dataModel.CurrentPrice
 import com.nunu.coco.dataModel.CurrentPriceResult
+import com.nunu.coco.dataStore.MyDataStore
 import com.nunu.coco.repository.NetworkRepository
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -45,4 +46,9 @@ class SelectViewModel : ViewModel() {
 
         _currentPriceResult.value = currentPriceResultList
     }
+
+    fun setUpFirstFlag() = viewModelScope.launch {
+        MyDataStore().setUpFirstData()
+    }
+
 }
