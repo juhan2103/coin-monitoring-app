@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nunu.coco.MainActivity
-import com.nunu.coco.R
 import com.nunu.coco.databinding.ActivitySelectBinding
 import com.nunu.coco.view.adapter.SelectRvAdapter
 import timber.log.Timber
@@ -38,12 +37,21 @@ class SelectActivity : AppCompatActivity() {
             Timber.d(it.toString())
         })
 
-        viewModel.setUpFirstFlag()
-
         binding.laterTextArea.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+
+            viewModel.setUpFirstFlag()
+            viewModel.saveSelectedCoinList(selectRvAdapter.selectedCoinList)
+
         }
+
+        viewModel.save.observe(this, Observer {
+            if(it.equals("done")){
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            }
+        })
 
     }
 }
