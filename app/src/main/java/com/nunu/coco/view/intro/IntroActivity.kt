@@ -7,8 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Observer
-import com.nunu.coco.MainActivity
-import com.nunu.coco.R
+import com.nunu.coco.view.main.MainActivity
 import com.nunu.coco.databinding.ActivityIntroBinding
 import timber.log.Timber
 
