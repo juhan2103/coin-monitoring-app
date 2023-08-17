@@ -3,6 +3,7 @@ package com.nunu.coco.repository
 import com.nunu.coco.App
 import com.nunu.coco.db.CoinPriceDatabase
 import com.nunu.coco.db.entity.InterestCoinEntity
+import com.nunu.coco.db.entity.SelectedCoinPriceEntity
 
 class DbRepository {
 
@@ -22,5 +23,12 @@ class DbRepository {
 
     // 사용자가 관심있어한 코인만 가져오기
     fun getAllInterestSelectedCoinData() = db.interestCoinDao().getSelectedData()
+
+    // CoinPrice
+    fun getAllCoinPriceData() = db.selectedCoinDao().getAllData()
+
+    fun insertCoinPriceData(selectedCoinPriceEntity: SelectedCoinPriceEntity) = db.selectedCoinDao().insert(selectedCoinPriceEntity)
+
+    fun getOneSelectedCoinData(coinName : String) = db.selectedCoinDao().getOneCoinData(coinName)
 
 }
